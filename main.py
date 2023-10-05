@@ -210,6 +210,8 @@ def play(word):
     print(word_completion)
     print()
     while not guessed and tries > 0:
+        if len(guessed_letters) > 0:
+            print(f'Уже названные буквы: {guessed_letters}')
         guess = input('Введите букву или слово целиком: ').upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
